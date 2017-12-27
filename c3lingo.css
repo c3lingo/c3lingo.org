@@ -79,6 +79,15 @@ a.block-link:hover {
 a.block-link:active {
   background-color: #d9d9d9;
 }
+a.block-link h1 {
+  color: blue;
+}
+
+/* For elements that occur next to block links but aren't clickable */
+.block-padding {
+  display: block;
+  padding: 1em;
+}
 
 .wrapper {
   max-width: 60rem;
