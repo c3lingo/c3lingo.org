@@ -14,49 +14,45 @@
             <hgroup>
               <h1>c3lingo</h1>
               <p lang="en">Live interpretations at 35c3</p>
-              <p lang="de">Simultanübersetzungen auf dem 35c3</p>
             </hgroup>
           </header>
 
           <div class="main-grid">
-            <a class="block-link" href="//streaming.c3lingo.org">
-              <section>
-                <h1>
-                  <span lang="en">How to Listen</span>
-                  <br>
-                  <span lang="de">Wie du zuhören kannst</span>
-                </h1>
-
-                <p lang="en">
-                  Whether you’re in the audience or watching the stream,
-                  read our handy setup guide to get started.
-                </p>
-
-                <p lang="de">
-                  Egal, ob du im Publikum sitzt oder per Stream zusiehst:
-                  lies unsere Kurzanleitung, um loszulegen.
-                </p>
-              </section>
-            </a>
-
-            <section class="block-padding">
-              <h1>
-                <span lang="en">Help us Translate</span>
-                <br>
-                <span lang="de">Mitmachen</span>
-              </h1>
-
-              <p lang="en">
-                We’re always looking for translators. If you think live interpretations might be for
-                you (even if you’ve never done this sort of thing before),
-                why don’t you come to one of our meetings?
-              </p>
-
-              <p lang="de">
-                Wir suchen immer nach Menschen, die mit uns übersetzen. Wenn du glaubst,
-                Simultanübersetzung könnte etwas für dich sein (und auch, wenn du noch nie etwas in der
-                Richtung gemacht hast), komm doch einfach zu einem unserer Treffen.
-              </p>
+            <section lange="en">
+              <h2>In the Audience</h2>
+              <p>For listeners sitting in the audience of conference talks as they happen, we provide low-latency translation streams
+                via <a href="https://wiki.mumble.info/">Mumble</a>.</p>
+              
+              <p>For this, you'll need a Mumble client. We recommend the following clients:</p>
+              
+              <ul>
+                <li><b>Desktop:</b> <a href="https://mumble.c3lingo.org/">Our web client</a>
+                </li>
+                <li><b>Android:</b> Plumble – <a href="https://play.google.com/store/apps/details?id=com.morlunk.mumbleclient.free">Google</a>,
+                  <a href="https://f-droid.org/packages/com.morlunk.mumbleclient/">F-Droid</a>
+                </li>
+                <li><b>iOS:</b> <a href="http://itunes.apple.com/us/app/mumble/id443472808?ls=1&mt=8">Mumble</a>
+                </li>
+              </ul>
+              
+              <p>Use the following <b>settings</b> (in the web client, you shouldn't need to configure anything):</p>
+              
+              <dl>
+                <dt>Server</dt><dd><span class="field">mumble.c3lingo.org</span></dd>
+                <dt>Port</dt><dd><span class="field">64738</span> (Web Client: <span class="field">64737</span>)
+                <dt>Username</dt><dd>Your choice, e.g. <span class="field" data-username>mumble12345678</span>
+                <dt>Password</dt><dd><span class="field blank">(blank)</span>
+              </dl>
+              
+              <p>If all works, you‘ll now be provided with a <b>list of channels</b>. There is a primary and a secondary translation
+                channel for each hall. The primary channel translates between English and German, the secondary channel translates
+                into a third language (when available).</p>
+            </section>
+            <section>
+              <h2>Elsewhere</h2>
+              <p>If you’re not in the audience, the <a href="https://streaming.media.ccc.de/35c3/">video and audio streams</a>
+                provided by the VOC are by far the easiest solution. You’ll find a choice of translated streams in the <b>Formats</b>
+                tab.</p>
             </section>
           </div>
         </div>
@@ -68,5 +64,26 @@
         </div>
       </footer>
     </div>
+
+    <script type="text/javascript" defer>
+      (function () {
+        document.body.addEventListener('mousedown', function (ev) {
+          if (!ev.target.classList.contains('field')) return;
+          var selection = window.getSelection();
+          var range = document.createRange();
+          range.selectNodeContents(ev.target);
+          selection.removeAllRanges();
+          selection.addRange(range);
+        });
+        document.body.addEventListener('mouseup', function (ev) {
+          if (!ev.target.classList.contains('field')) return;
+          ev.preventDefault();
+        });
+        var usernames = document.querySelectorAll('[data-username]');
+        for (let i = 0; i < usernames.length; i += 1) {
+          usernames[i].textContent = 'mumble' + Math.round(Math.random() * 1000000000);
+        }
+      })();
+    </script>
   </body>
 </html>

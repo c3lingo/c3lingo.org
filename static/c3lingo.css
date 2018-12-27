@@ -157,10 +157,29 @@ footer {
       flex-shrink: 0;
 }
 
-section h1 {
+section h2 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
 }
 section > * + * {
   margin-top: .5rem;
+}
+section > * + h2 {
+  margin-top: 2rem;
+}
+strong, b, dt {
+  font-weight: 700;
+}
+dd + dt {
+  margin-top: .5rem;
+}
+.field {
+  border: 1px solid #ddd;
+  padding: .2em;
+}
+.field.blank {
+  user-select: none;
+  -moz-user-select: none;
+  pointer-events: none;
+  color: #999;
 }
