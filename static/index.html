@@ -8,23 +8,28 @@
   </head>
   <body>
     <div class="page">
-      <main>
+      <nav>
+        <div class="wrapper language-selection">
+          <a href="#en" lang="en" data-lang="de">English</a> <a href="#de" lang="de" data-lang="en">Deutsch</a>
+        </div>
+      </nav>
+      <main lang="en" data-lang="en">
         <div class="wrapper">
           <header>
             <hgroup>
               <h1>c3lingo</h1>
-              <p lang="en">Live interpretations at 35c3</p>
+              <p>How to Listen to Live Translations at 35c3</p>
             </hgroup>
           </header>
 
           <div class="main-grid">
-            <section lange="en">
+            <section>
               <h2>In the Audience</h2>
               <p>For listeners sitting in the audience of conference talks as they happen, we provide low-latency translation streams
                 via <a href="https://wiki.mumble.info/">Mumble</a>.</p>
-              
+
               <p>For this, you'll need a Mumble client. We recommend the following clients:</p>
-              
+
               <ul>
                 <li><b>Desktop:</b> <a href="https://mumble.c3lingo.org/">Our web client</a>
                 </li>
@@ -34,16 +39,16 @@
                 <li><b>iOS:</b> <a href="http://itunes.apple.com/us/app/mumble/id443472808?ls=1&mt=8">Mumble</a>
                 </li>
               </ul>
-              
+
               <p>Use the following <b>settings</b> (in the web client, you shouldn't need to configure anything):</p>
-              
+
               <dl>
                 <dt>Server</dt><dd><span class="field">mumble.c3lingo.org</span></dd>
                 <dt>Port</dt><dd><span class="field">64738</span> (Web Client: <span class="field">64737</span>)
                 <dt>Username</dt><dd>Your choice, e.g. <span class="field" data-username>mumble12345678</span>
                 <dt>Password</dt><dd><span class="field blank">(blank)</span>
               </dl>
-              
+
               <p>If all works, you‘ll now be provided with a <b>list of channels</b>. There is a primary and a secondary translation
                 channel for each hall. The primary channel translates between English and German, the secondary channel translates
                 into a third language (when available).</p>
@@ -53,6 +58,53 @@
               <p>If you’re not in the audience, the <a href="https://streaming.media.ccc.de/35c3/">video and audio streams</a>
                 provided by the VOC are by far the easiest solution. You’ll find a choice of translated streams in the <b>Formats</b>
                 tab.</p>
+            </section>
+          </div>
+        </div>
+      </main>
+      <main lang="de" data-lang="de">
+        <div class="wrapper">
+          <header>
+            <hgroup>
+              <h1>c3lingo</h1>
+              <p>Wie du die Live-Übersetzungen auf dem 35c3 empfängst</p>
+            </hgroup>
+          </header>
+
+          <div class="main-grid">
+            <section>
+              <h2>Im Publikum</h2>
+              <p>Für Menschen, die die Vorträge direkt im Saal verfolgen, bieten wir <a href="https://wiki.mumble.info/">Mumble</a>-Streams
+                mit niedriger Latenz an.</p>
+
+              <p>Du benötigst einen Mumble-Client. Wir empfehlen die folgenden Clients:</p>
+
+              <ul>
+                <li><b>Desktop:</b> <a href="https://mumble.c3lingo.org/">Unseren Web-Client</a>
+                </li>
+                <li><b>Android:</b> Plumble – <a href="https://play.google.com/store/apps/details?id=com.morlunk.mumbleclient.free">Google</a>,
+                  <a href="https://f-droid.org/packages/com.morlunk.mumbleclient/">F-Droid</a>
+                </li>
+                <li><b>iOS:</b> <a href="http://itunes.apple.com/us/app/mumble/id443472808?ls=1&mt=8">Mumble</a>
+                </li>
+              </ul>
+
+              <p>Nutze die folgenden <b>Einstellungen</b> (im Web-Client solltest du nichts konfigurieren müssen):</p>
+
+              <dl>
+                <dt>Server</dt><dd><span class="field">mumble.c3lingo.org</span></dd>
+                <dt>Port</dt><dd><span class="field">64738</span> (Web-Client: <span class="field">64737</span>)
+                <dt>Username</dt><dd>Was du möchtest, z.&thinsp;B. <span class="field" data-username>mumble12345678</span>
+                <dt>Passwort</dt><dd><span class="field blank">(leer)</span>
+              </dl>
+
+              <p>Wenn alles funktioniert, siehst du nun eine <b>Liste der Kanäle</b>. Für jeden Saal gibt es zwei Kanäle. Der erste
+                Kanal übersetzt zwischen Deutsch und Englisch, der zweite übersetzt in andere Sprachen (wenn verfügbar).</p>
+            </section>
+            <section>
+              <h2>Woanders</h2>
+              <p>Wenn du nicht im Publikum sitzt, sind die <a href="https://streaming.media.ccc.de/35c3/">Video- und Audio-Streams</a>
+                des VOC die einfachste Lösung. Im Tab <b>Formate</b> findest du eine Auswahl von übersetzten Streams.</p>
             </section>
           </div>
         </div>
@@ -80,9 +132,22 @@
           ev.preventDefault();
         });
         var usernames = document.querySelectorAll('[data-username]');
+        var suggestedUsername = 'mumble' + Math.round(Math.random() * 1000000000);
         for (let i = 0; i < usernames.length; i += 1) {
-          usernames[i].textContent = 'mumble' + Math.round(Math.random() * 1000000000);
+          usernames[i].textContent = suggestedUsername;
         }
+
+        document.body.addEventListener('click', function (ev) {
+          if (!ev.target.href) return;
+          var hash = ev.target.href.split('#')[1];
+          if (!hash) return;
+          document.body.lang = hash;
+          ev.preventDefault();
+        });
+
+        var lang = 'en';
+        if (navigator.language && navigator.language.substr(0, 2) === 'de') lang = 'de';
+        document.body.lang = lang;
       })();
     </script>
   </body>
