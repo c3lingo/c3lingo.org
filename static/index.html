@@ -119,18 +119,23 @@
 
     <script type="text/javascript" defer>
       (function () {
-        document.body.addEventListener('mousedown', function (ev) {
+        function selectTarget(ev) {
           if (!ev.target.classList.contains('field')) return;
           var selection = window.getSelection();
           var range = document.createRange();
           range.selectNodeContents(ev.target);
           selection.removeAllRanges();
           selection.addRange(range);
-        });
-        document.body.addEventListener('mouseup', function (ev) {
+        }
+        function preventDefaultInField(ev) {
           if (!ev.target.classList.contains('field')) return;
           ev.preventDefault();
-        });
+        }
+        document.body.addEventListener('mousedown', selectTarget);
+        document.body.addEventListener('touchstart', selectTarget);
+        document.body.addEventListener('touchend', selectTarget);
+        document.body.addEventListener('touchmove', selectTarget);
+        document.body.addEventListener('mouseup', preventDefaultInField);
         var usernames = document.querySelectorAll('[data-username]');
         var suggestedUsername = 'mumble' + Math.round(Math.random() * 1000000000);
         for (let i = 0; i < usernames.length; i += 1) {
