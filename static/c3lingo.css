@@ -179,6 +179,9 @@ dd + dt {
   text-align: right;
   margin-top: 1rem;
 }
+.language-selection > * {
+  margin-left: 0.5em;
+}
 
 body[lang="en"] [data-lang="de"] {
   display: none;
