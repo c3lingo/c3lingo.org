@@ -197,7 +197,7 @@
 
         var lang = 'en';
         if (navigator.language && navigator.language.substr(0, 2) === 'de') lang = 'de';
-	if (navigator.language && navigator.language.substr(0, 2) === 'fr') lang = 'fr';
+        else if (navigator.language && navigator.language.substr(0, 2) === 'fr') lang = 'fr';
         document.body.lang = lang;
       })();
     </script>
