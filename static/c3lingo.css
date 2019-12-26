@@ -183,7 +183,19 @@ dd + dt {
 body[lang="en"] [data-lang="de"] {
   display: none;
 }
+body[lang="en"] [data-lang="fr"] {
+  display: none;
+}
 body[lang="de"] [data-lang="en"] {
+  display: none;
+}
+body[lang="de"] [data-lang="fr"] {
+  display: none;
+}
+body[lang="fr"] [data-lang="de"] {
+  display: none;
+}
+body[lang="fr"] [data-lang="en"] {
   display: none;
 }
 

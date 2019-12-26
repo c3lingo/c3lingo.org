@@ -2,15 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>35c3 Live Translations</title>
+    <title>36C3 Live Translations</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="c3lingo.css">
+    <link rel="stylesheet" href="c3lingo.css?v2">
   </head>
   <body>
     <div class="page">
       <nav>
         <div class="wrapper language-selection">
-          <a href="#en" lang="en" data-lang="de">English</a> <a href="#de" lang="de" data-lang="en">Deutsch</a>
+          <a href="#en" lang="en" data-lang="de">English</a>
+          <a href="#en" lang="en" data-lang="fr">English</a>
+          <a href="#de" lang="de" data-lang="en">Deutsch</a>
+          <a href="#de" lang="de" data-lang="fr">Deutsch</a>
+          <a href="#fr" lang="fr" data-lang="de">Français</a>
+          <a href="#fr" lang="fr" data-lang="en">Français</a>
         </div>
       </nav>
       <main lang="en" data-lang="en">
@@ -18,7 +23,7 @@
           <header>
             <hgroup>
               <h1>c3lingo</h1>
-              <p>How to Listen to Live Translations at 35c3</p>
+              <p>How to Listen to Live Translations at 36C3</p>
             </hgroup>
           </header>
 
@@ -55,7 +60,7 @@
             </section>
             <section>
               <h2>Elsewhere</h2>
-              <p>If you’re not in the audience, the <a href="https://streaming.media.ccc.de/35c3/">video and audio streams</a>
+              <p>If you’re not in the audience, the <a href="https://streaming.media.ccc.de/36c3/">video and audio streams</a>
                 provided by the VOC are by far the easiest solution. You’ll find a choice of translated streams in the <b>Formats</b>
                 tab.</p>
             </section>
@@ -67,7 +72,7 @@
           <header>
             <hgroup>
               <h1>c3lingo</h1>
-              <p>Wie du die Live-Übersetzungen auf dem 35c3 empfängst</p>
+              <p>Wie du die Live-Übersetzungen auf dem 36C3 empfängst</p>
             </hgroup>
           </header>
 
@@ -103,9 +108,52 @@
             </section>
             <section>
               <h2>Woanders</h2>
-              <p>Wenn du nicht im Publikum sitzt, sind die <a href="https://streaming.media.ccc.de/35c3/">Video- und Audio-Streams</a>
+              <p>Wenn du nicht im Publikum sitzt, sind die <a href="https://streaming.media.ccc.de/36c3/">Video- und Audio-Streams</a>
                 des VOC die einfachste Lösung. Im Tab <b>Formate</b> findest du eine Auswahl von übersetzten Streams.</p>
             </section>
+          </div>
+        </div>
+      </main>
+      <main lang="fr" data-lang="fr">
+        <div class="wrapper">
+          <header>
+            <hgroup>
+              <h1>c3lingo</h1>
+              <p>Comment accéder aux traductions du 26C3</p>
+            </hgroup>
+          </header>
+
+          <div class="main-grid">
+            <section>
+              <h2>Dans les amphithéâtres</h2>
+              <p>Pour celles et ceux qui se trouvent dans l'amphithéâtre où la conférence se déroule, l'équipe de traduction et le VOC fournissent des streams audio <a href="https://wiki.mumble.info/">Mumble</a> spécialement configurés pour une faible latence.</p>
+
+              <p>Pour y accéder, tu as besoin d'un client Mumble. Nous recommandons les clients suivants:</p>
+
+              <ul>
+                <li><b>Desktop:</b> <a href="https://mumble.c3lingo.org/">Notre client web</a>
+                </li>
+                <li><b>Android:</b> Plumble – <a href="https://play.google.com/store/apps/details?id=com.morlunk.mumbleclient.free">Google</a>,
+                  <a href="https://f-droid.org/packages/com.morlunk.mumbleclient/">F-Droid</a>
+                </li>
+                <li><b>iOS:</b> <a href="http://itunes.apple.com/us/app/mumble/id443472808?ls=1&mt=8">Mumble</a>
+                </li>
+              </ul>
+
+              <p>Utilise les <b>réglages</b> suivants (dans le web client, tu ne devrais pas avoir besoin de configurer quoi que ce soit):</p>
+
+              <dl>
+                <dt>Server</dt><dd><span class="field">mumble.c3lingo.org</span></dd>
+                <dt>Port</dt><dd><span class="field">64738</span> (Web Client: <span class="field">64737</span>)
+                <dt>Nom d'utilisateur</dt><dd>ce que tu veux, par exemple <span class="field" data-username>mumble12345678</span>
+                <dt>Mot de passe</dt><dd><span class="field blank">(vide)</span>
+              </dl>
+
+              <p>Si tout fonctionne, tu devrais voir une <b>liste des cannaux</b>. Il y a deux canaux pour chaque salle. Le premier canal traduit vers l'anglais ou l'allemand, le second canal traduit vers une autre langue, souvent le français, si disponible.</p>
+            </section>
+            <section>
+              <h2>Ailleurs</h2>
+	      <p>Si tu n'est pas dans le public, les <a href="https://streaming.media.ccc.de/36c3/">streams audio et video</a> du VOC la solution la plus simple. Tu trouveras un choix de streams traduits dans la languette <b>Formats</b>.</p>
           </div>
         </div>
       </main>
@@ -132,9 +180,6 @@
           ev.preventDefault();
         }
         document.body.addEventListener('mousedown', selectTarget);
-        document.body.addEventListener('touchstart', selectTarget);
-        document.body.addEventListener('touchend', selectTarget);
-        document.body.addEventListener('touchmove', selectTarget);
         document.body.addEventListener('mouseup', preventDefaultInField);
         var usernames = document.querySelectorAll('[data-username]');
         var suggestedUsername = 'mumble' + Math.round(Math.random() * 1000000000);
@@ -152,6 +197,7 @@
 
         var lang = 'en';
         if (navigator.language && navigator.language.substr(0, 2) === 'de') lang = 'de';
+	if (navigator.language && navigator.language.substr(0, 2) === 'fr') lang = 'fr';
         document.body.lang = lang;
       })();
     </script>
