@@ -74,7 +74,8 @@
       a.block-link:active {
         background-color: #d9d9d9;
       }
-      a.block-link h1 {
+      a.block-link h1,
+      a.block-link h2 {
         color: blue;
       }
 
@@ -241,42 +242,21 @@
           </header>
 
           <div class="main-grid">
-            <section>
-              <h2>In the Audience</h2>
-              <p>For listeners sitting in the audience of conference talks as they happen, we provide low-latency translation streams
-                via <a href="https://wiki.mumble.info/">Mumble</a>.</p>
-
-              <p>For this, you'll need a Mumble client. We recommend the following clients:</p>
-
-              <ul>
-                <li><b>Desktop:</b> <a href="https://streaming.c3lingo.org/">Our web client</a>
-                </li>
-                <li><b>Android:</b> Plumble – <a href="https://play.google.com/store/apps/details?id=com.morlunk.mumbleclient.free">Google</a>,
-                  <a href="https://f-droid.org/packages/com.morlunk.mumbleclient/">F-Droid</a>
-                </li>
-                <li><b>iOS:</b> <a href="http://itunes.apple.com/us/app/mumble/id443472808?ls=1&mt=8">Mumble</a>
-                </li>
-              </ul>
-
-              <p>Use the following <b>settings</b> (in the web client, you shouldn't need to configure anything):</p>
-
-              <dl>
-                <dt>Server</dt><dd><span class="field">mumble.c3lingo.org</span></dd>
-                <dt>Port</dt><dd><span class="field">64738</span> (Web Client: <span class="field">64737</span>)
-                <dt>Username</dt><dd>Your choice, e.g. <span class="field" data-username>mumble12345678</span>
-                <dt>Password</dt><dd><span class="field blank">(blank)</span>
-              </dl>
-
-              <p>If all works, you‘ll now be provided with a <b>list of channels</b>. There is a primary and a secondary translation
-                channel for each hall. The primary channel translates between English and German, the secondary channel translates
-                into a third language (when available).</p>
-            </section>
-            <section>
-              <h2>Elsewhere</h2>
-              <p>If you’re not in the audience, the <a href="https://streaming.media.ccc.de/36c3/">video and audio streams</a>
-                provided by the VOC are by far the easiest solution. You’ll find a choice of translated streams in the <b>Formats</b>
-                tab.</p>
-            </section>
+            <a class="block-link" href="https://streaming.c3lingo.org">
+              <section>
+                <h2>In the Audience</h2>
+                <p>For listeners sitting in the audience of conference talks as they happen, we provide low-latency translation streams
+                  via Mumble.</p>
+              </section>
+            </a>
+            <a class="block-link" href="https://streaming.media.ccc.de/36c3/">
+              <section>
+                <h2>Elsewhere</h2>
+                <p>If you’re not in the audience, the video and audio streams
+                  provided by the VOC are by far the easiest solution. You’ll find a choice of translated streams in the <b>Formats</b>
+                  tab.</p>
+              </section>
+            </a>
           </div>
         </div>
       </main>
@@ -290,40 +270,20 @@
           </header>
 
           <div class="main-grid">
-            <section>
-              <h2>Im Publikum</h2>
-              <p>Für Menschen, die die Vorträge direkt im Saal verfolgen, bieten wir <a href="https://wiki.mumble.info/">Mumble</a>-Streams
-                mit niedriger Latenz an.</p>
-
-              <p>Du benötigst einen Mumble-Client. Wir empfehlen die folgenden Clients:</p>
-
-              <ul>
-                <li><b>Desktop:</b> <a href="https://streaming.c3lingo.org/">Unseren Web-Client</a>
-                </li>
-                <li><b>Android:</b> Plumble – <a href="https://play.google.com/store/apps/details?id=com.morlunk.mumbleclient.free">Google</a>,
-                  <a href="https://f-droid.org/packages/com.morlunk.mumbleclient/">F-Droid</a>
-                </li>
-                <li><b>iOS:</b> <a href="http://itunes.apple.com/us/app/mumble/id443472808?ls=1&mt=8">Mumble</a>
-                </li>
-              </ul>
-
-              <p>Nutze die folgenden <b>Einstellungen</b> (im Web-Client solltest du nichts konfigurieren müssen):</p>
-
-              <dl>
-                <dt>Server</dt><dd><span class="field">mumble.c3lingo.org</span></dd>
-                <dt>Port</dt><dd><span class="field">64738</span> (Web-Client: <span class="field">64737</span>)
-                <dt>Username</dt><dd>Was du möchtest, z.&thinsp;B. <span class="field" data-username>mumble12345678</span>
-                <dt>Passwort</dt><dd><span class="field blank">(leer)</span>
-              </dl>
-
-              <p>Wenn alles funktioniert, siehst du nun eine <b>Liste der Kanäle</b>. Für jeden Saal gibt es zwei Kanäle. Der erste
-                Kanal übersetzt zwischen Deutsch und Englisch, der zweite übersetzt in andere Sprachen (wenn verfügbar).</p>
-            </section>
-            <section>
-              <h2>Woanders</h2>
-              <p>Wenn du nicht im Publikum sitzt, sind die <a href="https://streaming.media.ccc.de/36c3/">Video- und Audio-Streams</a>
-                des VOC die einfachste Lösung. Im Tab <b>Formate</b> findest du eine Auswahl von übersetzten Streams.</p>
-            </section>
+            <a class="block-link" href="https://streaming.c3lingo.org">
+              <section>
+                <h2>Im Publikum</h2>
+                <p>Für Menschen, die die Vorträge direkt im Saal verfolgen, bieten wir Mumble-Streams
+                  mit niedriger Latenz an.</p>
+              </section>
+            </a>
+            <a class="block-link" href="https://streaming.media.ccc.de/36c3/">
+              <section>
+                <h2>Woanders</h2>
+                <p>Wenn du nicht im Publikum sitzt, sind die Video- und Audio-Streams
+                  des VOC die einfachste Lösung. Im Tab <b>Formate</b> findest du eine Auswahl von übersetzten Streams.</p>
+              </section>
+            </a>
           </div>
         </div>
       </main>
@@ -337,36 +297,19 @@
           </header>
 
           <div class="main-grid">
+            <a class="block-link" href="https://streaming.c3lingo.org">
+              <section>
+                <h2>Dans les amphithéâtres</h2>
+                <p>Pour celles et ceux qui se trouvent dans l'amphithéâtre où la conférence se déroule, l'équipe de traduction et le VOC fournissent des streams audio Mumble spécialement configurés pour une faible latence.</p>
+              </section>
+            </a>
+            <a class="block-link" href="https://streaming.media.ccc.de/36c3/">
+              <section>
+                <h2>Ailleurs</h2>
+                <p>Si tu n'est pas dans le public, les streams audio et video du VOC la solution la plus simple. Tu trouveras un choix de streams traduits dans la languette <b>Formats</b>.</p>
+              </section>
+            </a>
             <section>
-              <h2>Dans les amphithéâtres</h2>
-              <p>Pour celles et ceux qui se trouvent dans l'amphithéâtre où la conférence se déroule, l'équipe de traduction et le VOC fournissent des streams audio <a href="https://wiki.mumble.info/">Mumble</a> spécialement configurés pour une faible latence.</p>
-
-              <p>Pour y accéder, tu as besoin d'un client Mumble. Nous recommandons les clients suivants:</p>
-
-              <ul>
-                <li><b>Desktop:</b> <a href="https://streaming.c3lingo.org/">Notre client web</a>
-                </li>
-                <li><b>Android:</b> Plumble – <a href="https://play.google.com/store/apps/details?id=com.morlunk.mumbleclient.free">Google</a>,
-                  <a href="https://f-droid.org/packages/com.morlunk.mumbleclient/">F-Droid</a>
-                </li>
-                <li><b>iOS:</b> <a href="http://itunes.apple.com/us/app/mumble/id443472808?ls=1&mt=8">Mumble</a>
-                </li>
-              </ul>
-
-              <p>Utilise les <b>réglages</b> suivants (dans le web client, tu ne devrais pas avoir besoin de configurer quoi que ce soit):</p>
-
-              <dl>
-                <dt>Server</dt><dd><span class="field">mumble.c3lingo.org</span></dd>
-                <dt>Port</dt><dd><span class="field">64738</span> (Web Client: <span class="field">64737</span>)
-                <dt>Nom d'utilisateur</dt><dd>ce que tu veux, par exemple <span class="field" data-username>mumble12345678</span>
-                <dt>Mot de passe</dt><dd><span class="field blank">(vide)</span>
-              </dl>
-
-              <p>Si tout fonctionne, tu devrais voir une <b>liste des cannaux</b>. Il y a deux canaux pour chaque salle. Le premier canal traduit vers l'anglais ou l'allemand, le second canal traduit vers une autre langue, souvent le français, si disponible.</p>
-            </section>
-            <section>
-              <h2>Ailleurs</h2>
-	      <p>Si tu n'est pas dans le public, les <a href="https://streaming.media.ccc.de/36c3/">streams audio et video</a> du VOC la solution la plus simple. Tu trouveras un choix de streams traduits dans la languette <b>Formats</b>.</p>
           </div>
         </div>
       </main>
